@@ -1,0 +1,24 @@
+This directory contains the PURT library.
+
+PURT is the Peripheral UCLA Robotics Toolkit library. It does not mimick URT
+on embedded devices. Instead, in encompasses the communication stack necessary
+to interact with an URT server. Additionally, it contains some common code
+for utilizing embedded hardware devices.
+
+PURT also can operate in two similiar modes that do not have anything to do
+with URT. PURT, under these modes, simply provides easy access to the UART
+(serial device) as well as other devices.
+
+The PURT modes are defined as follows:
+	1) Raw (standalone) [PURT_RAW]
+	2) Raw with stdio support (standalone) [PURT_RAW_STDIO]
+	3) Unbuffered, blocking StateDevice I/O (w/ URT) [PURT_SD_DIRECT]
+	4) Buffered, non-blocking StateDevice I/O (w/ URT) [PURT_SD_BUFFER]
+
+
+When including one of the main PURT header files, the following steps should be
+taken:
+	1) #include "purt/modes.h"
+	2) #define PURT_MODE {mode} //where {mode} is a macro from modes.h
+		representing the desired mode.
+	3) Include all other desired PURT files.

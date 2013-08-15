@@ -1,0 +1,13 @@
+The contrib directory of URT contains library code that is not technically
+a part of URT but rather closely associated with it. For example, stable
+code for interfacing with a specific device (e.g., a motor controller) may
+be found within the directory.
+
+Code found in here was not added to URT due to the fact that it was too
+specific -- URT's goal is to provide a common framework for high-level
+robotics projects -- yet useful and generic enough to be used across multiple
+projects.
+
+The code in here is a part of the urt::contrib namespace exclusively.
+It does not necessarily conform to the idioms, paradigms, and generally
+quality intended of URT.
